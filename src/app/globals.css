@@ -1,63 +1,89 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-primary: #0f172a;
-  --color-brand-secondary: #1e293b;
-  --color-brand-accent: #d4af37;
-  --color-brand-gold: #fbbf24;
+  --color-brand-astronaut: #003851;
+  --color-brand-blue-white: #F8FAFC;
+  --color-brand-orange: #F4A460;
+  --color-brand-bg: #F8FAFC;
   
-  --font-heading: "Outfit", sans-serif;
-  --font-body: "Inter", sans-serif;
+  --font-jakarta: var(--font-jakarta), sans-serif;
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #0f172a;
-  --card: #f8fafc;
-  --card-foreground: #0f172a;
-  --primary: #0f172a;
+  --background: #F8FAFC;
+  --foreground: #003851;
+  --card: #ffffff;
+  --card-foreground: #003851;
+  --primary: #003851;
   --primary-foreground: #ffffff;
-  --accent: #d4af37;
+  --accent: #F4A460;
   --accent-foreground: #ffffff;
   --border: #e2e8f0;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #020617;
-    --foreground: #f8fafc;
-    --card: #0f172a;
-    --card-foreground: #f8fafc;
-    --primary: #f8fafc;
-    --primary-foreground: #020617;
-    --accent: #d4af37;
-    --accent-foreground: #020617;
-    --border: #1e293b;
+    --background: #001a26;
+    --foreground: #F8FAFC;
+    --card: #002b3d;
+    --card-foreground: #F8FAFC;
+    --primary: #F8FAFC;
+    --primary-foreground: #003851;
+    --accent: #F4A460;
+    --accent-foreground: #003851;
+    --border: #003851;
   }
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans);
+  font-family: var(--font-jakarta);
   overflow-x: hidden;
 }
 
 @layer base {
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold tracking-tight text-brand-primary dark:text-white;
+    @apply font-bold tracking-tight;
+    font-family: var(--font-jakarta);
   }
 }
 
-.glass {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+/* Reveal on Scroll Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.gradient-text {
-  background: linear-gradient(135deg, #d4af37 0%, #fbbf24 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #003851 0%, #005a82 100%);
+}
+
+.btn-orange {
+  @apply bg-brand-orange text-white font-bold py-3 px-8 rounded-full transition-all duration-300 hover:brightness-110 hover:shadow-lg hover:shadow-brand-orange/20 active:scale-95;
+}
+
+.btn-astronaut {
+  @apply bg-brand-astronaut text-white font-bold py-3 px-8 rounded-full transition-all duration-300 hover:bg-[#004a6b] hover:shadow-lg hover:shadow-brand-astronaut/20 active:scale-95;
+}
+
+.roadmap-line {
+  stroke: #003851;
+  stroke-width: 4;
+  stroke-dasharray: 8 8;
+  fill: none;
+  opacity: 0.2;
 }
