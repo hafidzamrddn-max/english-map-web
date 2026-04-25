@@ -1,6 +1,23 @@
+"use client";
+
 import React from "react";
 
 export default function LandingPage() {
+  const handleDownload = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const passkey = prompt("Masukkan passkey untuk mengunduh:");
+    if (passkey === "MAP2026") {
+      const link = document.createElement("a");
+      link.href = "/resource.pdf";
+      link.download = "resource.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } else if (passkey !== null) {
+      alert("Passkey tidak valid");
+    }
+  };
+
   return (
     <div className="flex flex-col min-h-screen selection:bg-brand-orange/30 selection:text-brand-astronaut">
       {/* Navigation */}
@@ -42,13 +59,16 @@ export default function LandingPage() {
                 <a href="https://wa.me/62881011617077" target="_blank" rel="noopener noreferrer" className="btn-orange w-full sm:w-auto text-center text-lg px-10 py-4">
                   Daftar Sekarang
                 </a>
-                <a href="/resource.pdf" download className="btn-astronaut w-full sm:w-auto text-center text-lg px-10 py-4 flex items-center justify-center gap-2 group/btn relative overflow-hidden shadow-xl shadow-brand-astronaut/10 transition-all">
+                <button 
+                  onClick={handleDownload}
+                  className="btn-astronaut w-full sm:w-auto text-center text-lg px-10 py-4 flex items-center justify-center gap-2 group/btn relative overflow-hidden shadow-xl shadow-brand-astronaut/10 transition-all cursor-pointer"
+                >
                   <span className="relative z-10 flex items-center gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover/btn:translate-y-1 transition-transform"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
                     Free Resource
                   </span>
                   <div className="absolute inset-0 bg-white/10 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300" />
-                </a>
+                </button>
                 <a href="#program" className="w-full sm:w-auto text-center px-8 py-4 text-brand-astronaut font-bold hover:bg-brand-astronaut/5 rounded-full transition-all text-sm">
                   Lihat Program
                 </a>
