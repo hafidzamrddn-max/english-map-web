@@ -250,72 +250,45 @@ export default function LandingPage() {
               Bukan salahmu, hanya kurang jam terbang. English Map menghidupkan insting bahasamu lewat simulasi dunia nyata agar kamu bisa bicara selancar bernapas.
             </motion.p>
 
-            {/* Visual Comparison Chart */}
+            {/* Visual Comparison Chart - Static Apple Widget Style */}
             <motion.div 
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 1, delay: 0.2 }}
-              className="bg-brand-astronaut border border-white/10 rounded-[40px] p-10 md:p-16 max-w-4xl mx-auto text-left shadow-2xl relative overflow-hidden"
+              className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mt-16"
             >
-              <div className="absolute top-0 right-0 w-64 h-64 bg-brand-orange/5 blur-3xl rounded-full" />
-              <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-12 tracking-tight text-center">Perbandingan Metode</h3>
-              
-              <div className="space-y-12">
-                {/* Traditional Method */}
-                <div>
-                  <div className="flex justify-between items-end mb-4">
-                    <p className="text-xl font-bold text-white/60">Tempat Les Lain</p>
-                  </div>
-                  <div className="flex h-12 w-full rounded-full overflow-hidden bg-white/5 relative border border-white/10">
-                    <motion.div 
-                      initial={{ width: "0%" }}
-                      whileInView={{ width: "80%" }}
-                      viewport={{ once: true, margin: "-50px" }}
-                      transition={{ duration: 2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-                      className="bg-white/20 h-full flex items-center justify-center border-r border-white/10 absolute left-0 top-0"
-                    >
-                      <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay:1}} className="text-xs font-bold text-white/70 px-4 whitespace-nowrap">80% Teori</motion.span>
-                    </motion.div>
-                    <motion.div 
-                      initial={{ width: "0%" }}
-                      whileInView={{ width: "20%" }}
-                      viewport={{ once: true, margin: "-50px" }}
-                      transition={{ duration: 2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-                      className="bg-brand-orange/30 h-full flex items-center justify-center absolute right-0 top-0"
-                    >
-                      <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay:1}} className="text-xs font-bold text-brand-orange px-4 whitespace-nowrap">20% Praktik</motion.span>
-                    </motion.div>
+              {/* Traditional Method */}
+              <div className="bg-black/5 border border-current/5 rounded-[40px] p-10 md:p-14 flex flex-col items-center justify-center text-center">
+                <div className="w-40 h-40 relative mb-8">
+                  <svg className="w-full h-full transform -rotate-90 drop-shadow-md" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="40" stroke="currentColor" strokeWidth="12" fill="transparent" className="text-current opacity-10" />
+                    <circle cx="50" cy="50" r="40" stroke="currentColor" strokeWidth="12" fill="transparent" strokeDasharray="201 251.3" className="text-current opacity-30" strokeLinecap="round" />
+                  </svg>
+                  <div className="absolute inset-0 flex flex-col items-center justify-center">
+                    <span className="text-3xl font-extrabold opacity-50">80%</span>
+                    <span className="text-[10px] font-bold uppercase tracking-widest opacity-30 mt-1">Teori</span>
                   </div>
                 </div>
+                <h4 className="text-2xl font-bold mb-3 opacity-60">Tempat Les Lain</h4>
+                <p className="opacity-50 font-medium leading-relaxed">Waktu berharga habis hanya untuk menghafal rumus grammar.</p>
+              </div>
 
-                {/* English Map Method */}
-                <div>
-                  <div className="flex justify-between items-end mb-4">
-                    <p className="text-2xl font-extrabold text-white">English Map</p>
-                  </div>
-                  <div className="flex h-16 w-full rounded-full overflow-hidden bg-white/5 shadow-lg shadow-brand-orange/10 border border-white/10 relative">
-                    <motion.div 
-                      initial={{ width: "0%" }}
-                      whileInView={{ width: "20%" }}
-                      viewport={{ once: true, margin: "-50px" }}
-                      transition={{ duration: 2, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
-                      className="bg-white/10 h-full flex items-center justify-center border-r border-white/10 absolute left-0 top-0"
-                    >
-                      <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay:1.2}} className="text-xs font-bold text-white/50 px-4 whitespace-nowrap">20% Teori</motion.span>
-                    </motion.div>
-                    <motion.div 
-                      initial={{ width: "0%" }}
-                      whileInView={{ width: "80%" }}
-                      viewport={{ once: true, margin: "-50px" }}
-                      transition={{ duration: 2, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
-                      className="bg-brand-orange h-full flex items-center justify-center absolute right-0 top-0 overflow-hidden"
-                    >
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full animate-[shimmer_2s_infinite]" />
-                      <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay:1.2}} className="text-sm font-extrabold text-white px-4 whitespace-nowrap">80% Praktik Bicara</motion.span>
-                    </motion.div>
+              {/* English Map Method */}
+              <div className="bg-brand-astronaut border border-brand-astronaut/10 rounded-[40px] p-10 md:p-14 flex flex-col items-center justify-center text-center relative overflow-hidden shadow-2xl text-white">
+                <div className="absolute inset-0 bg-brand-orange/10 blur-3xl" />
+                <div className="w-40 h-40 relative mb-8 z-10">
+                  <svg className="w-full h-full transform -rotate-90 drop-shadow-xl" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="40" stroke="currentColor" strokeWidth="12" fill="transparent" className="text-white/10" />
+                    <circle cx="50" cy="50" r="40" stroke="currentColor" strokeWidth="12" fill="transparent" strokeDasharray="201 251.3" className="text-brand-orange" strokeLinecap="round" />
+                  </svg>
+                  <div className="absolute inset-0 flex flex-col items-center justify-center">
+                    <span className="text-3xl font-extrabold text-brand-orange">80%</span>
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-brand-orange/70 mt-1">Praktik</span>
                   </div>
                 </div>
+                <h4 className="text-2xl font-bold mb-3 relative z-10">English Map</h4>
+                <p className="text-white/70 font-medium leading-relaxed relative z-10">Fokus penuh pada simulasi bicara. Hancurkan mental block selamanya.</p>
               </div>
             </motion.div>
           </div>
