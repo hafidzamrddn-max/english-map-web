@@ -52,7 +52,7 @@ export default function LandingPage() {
 
       <motion.header 
         style={{ backgroundColor: navBg }}
-        className="fixed top-0 w-full z-50 backdrop-blur-2xl border-b border-current/5 transition-all duration-300"
+        className="fixed top-0 w-full z-50 backdrop-blur-2xl border-b border-black/5 transition-all duration-300 text-brand-astronaut"
       >
         <nav className="max-w-7xl mx-auto px-6 md:pl-24 h-24 flex items-center justify-between">
           <motion.div style={{ scale: logoScale }} className="flex flex-col origin-left">
