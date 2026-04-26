@@ -98,10 +98,10 @@ export default function LandingPage() {
               <MapIcon className="w-12 h-12" />
             </div>
             <h1 className="text-5xl md:text-7xl lg:text-[7rem] font-extrabold tracking-tighter leading-[1.1] mb-6">
-              Peta jalan<br />bahasamu.
+              Peta Jalan<br />Bahasamu
             </h1>
             <p className="text-xl md:text-2xl font-medium opacity-60">
-              Berhenti menghafal. Mulai berbicara. Tanpa batas.
+              Berhenti menghafal, mulai berbicara tanpa batas.
             </p>
           </motion.div>
           
@@ -126,9 +126,9 @@ export default function LandingPage() {
               transition={{ duration: 1 }}
               className="text-6xl md:text-7xl font-extrabold tracking-tighter leading-[1.05]"
             >
-              Bicara.<br />
+              Bicara<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-[#ff6b6b]">
-                Tanpa batas.
+                Tanpa Batas
               </span>
             </motion.h2>
             
@@ -139,7 +139,7 @@ export default function LandingPage() {
               transition={{ duration: 1, delay: 0.1 }}
               className="text-xl md:text-2xl opacity-70 leading-relaxed font-medium max-w-2xl mx-auto lg:mx-0"
             >
-              Teori usang. Hasil nyata. Simpan buku grammarmu. Mulai berbicara selancar bahasa ibu. Dirancang khusus untuk menghancurkan mental block orang Indonesia. Selamanya.
+              Teori usang tergantikan oleh hasil nyata. Simpan buku grammar-mu dan mulai berbicara selancar bahasa ibu. Dirancang khusus untuk menghancurkan mental block orang Indonesia selamanya.
             </motion.p>
 
             <motion.div 
@@ -189,7 +189,7 @@ export default function LandingPage() {
               className="text-center"
             >
               <h2 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight mb-6">
-                Tahu artinya. Lidah kaku.
+                Mengerti teorinya, tapi kaku saat berbicara.
               </h2>
             </motion.div>
 
@@ -201,7 +201,7 @@ export default function LandingPage() {
               className="text-center"
             >
               <h2 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight mb-6 text-brand-orange/90">
-                Paham teori. Nol praktik.
+                Paham grammar, minim praktik.
               </h2>
             </motion.div>
 
@@ -213,15 +213,15 @@ export default function LandingPage() {
               className="text-center"
             >
               <h2 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight opacity-70">
-                Minder bicara. Kesempatan hilang.
+                Takut salah bicara, kesempatan pun hilang.
               </h2>
             </motion.div>
           </div>
         </section>
 
         {/* Solution Section */}
-        <section className="py-40 px-6 md:pl-24">
-          <div className="max-w-4xl mx-auto text-center">
+        <section className="py-32 px-6 md:pl-24">
+          <div className="max-w-5xl mx-auto text-center">
             <motion.div 
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -238,17 +238,82 @@ export default function LandingPage() {
               transition={{ duration: 1 }}
               className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-10 tracking-tight"
             >
-              Sedikit teori.<br />Banyak <span className="text-brand-orange">bicara</span>.
+              Sedikit Teori<br />Banyak <span className="text-brand-orange">Bicara</span>
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 1, delay: 0.1 }}
-              className="text-2xl opacity-70 font-medium leading-relaxed max-w-3xl mx-auto"
+              className="text-2xl opacity-70 font-medium leading-relaxed max-w-3xl mx-auto mb-20"
             >
-              Bukan salahmu. Hanya kurang jam terbang. English Map menghidupkan insting bahasamu. Lewat 80% simulasi dunia nyata. Bicara selancar bernapas.
+              Bukan salahmu, hanya kurang jam terbang. English Map menghidupkan insting bahasamu lewat simulasi dunia nyata agar kamu bisa bicara selancar bernapas.
             </motion.p>
+
+            {/* Visual Comparison Chart */}
+            <motion.div 
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="bg-brand-astronaut border border-white/10 rounded-[40px] p-10 md:p-16 max-w-4xl mx-auto text-left shadow-2xl relative overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 w-64 h-64 bg-brand-orange/5 blur-3xl rounded-full" />
+              <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-12 tracking-tight text-center">Perbandingan Metode</h3>
+              
+              <div className="space-y-12">
+                {/* Traditional Method */}
+                <div>
+                  <div className="flex justify-between items-end mb-4">
+                    <p className="text-xl font-bold text-white/60">Tempat Les Lain</p>
+                  </div>
+                  <div className="flex h-12 w-full rounded-full overflow-hidden bg-white/5">
+                    <motion.div 
+                      initial={{ width: 0 }}
+                      whileInView={{ width: "80%" }}
+                      transition={{ duration: 1.5, ease: "easeOut", delay: 0.5 }}
+                      className="bg-white/20 h-full flex items-center justify-center border-r border-white/10"
+                    >
+                      <span className="text-xs font-bold text-white/70">80% Teori</span>
+                    </motion.div>
+                    <motion.div 
+                      initial={{ width: 0 }}
+                      whileInView={{ width: "20%" }}
+                      transition={{ duration: 1.5, ease: "easeOut", delay: 0.5 }}
+                      className="bg-brand-orange/30 h-full flex items-center justify-center"
+                    >
+                      <span className="text-xs font-bold text-brand-orange">20% Praktik</span>
+                    </motion.div>
+                  </div>
+                </div>
+
+                {/* English Map Method */}
+                <div>
+                  <div className="flex justify-between items-end mb-4">
+                    <p className="text-2xl font-extrabold text-white">English Map</p>
+                  </div>
+                  <div className="flex h-16 w-full rounded-full overflow-hidden bg-white/5 shadow-lg shadow-brand-orange/10 border border-white/10">
+                    <motion.div 
+                      initial={{ width: 0 }}
+                      whileInView={{ width: "20%" }}
+                      transition={{ duration: 1.5, ease: "easeOut", delay: 0.5 }}
+                      className="bg-white/10 h-full flex items-center justify-center border-r border-white/10"
+                    >
+                      <span className="text-xs font-bold text-white/50">20% Teori</span>
+                    </motion.div>
+                    <motion.div 
+                      initial={{ width: 0 }}
+                      whileInView={{ width: "80%" }}
+                      transition={{ duration: 1.5, ease: "easeOut", delay: 0.5 }}
+                      className="bg-brand-orange h-full flex items-center justify-center relative overflow-hidden"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full animate-[shimmer_2s_infinite]" />
+                      <span className="text-sm font-extrabold text-white">80% Praktik Bicara</span>
+                    </motion.div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </section>
 
@@ -265,9 +330,9 @@ export default function LandingPage() {
               <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-green-500/10 text-green-700 rounded-full text-xs font-bold tracking-widest uppercase mb-6">
                 <span className="w-2 h-2 rounded-full bg-green-500" /> 100% Gratis
               </div>
-              <h2 className="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">Satu panduan. Ribuan kata.</h2>
+              <h2 className="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">Satu Panduan, Ribuan Kata</h2>
               <p className="text-xl opacity-80 font-medium mb-8">
-                Download langkah praktisnya. Berbicara hari ini. Bukan sekadar dokumen, ini peta jalanmu menuju kelancaran sejati.
+                Download langkah praktisnya dan mulailah berbicara hari ini. Ini bukan sekadar dokumen, melainkan peta jalan menuju kelancaran sejati.
               </p>
               <a 
                 href="/resource.pdf" 
@@ -302,7 +367,7 @@ export default function LandingPage() {
                 transition={{ duration: 1 }}
                 className="text-5xl md:text-6xl font-extrabold tracking-tight mb-6"
               >
-                Pilih jalan pintasmu.
+                Pilih Jalan Pintasmu
               </motion.h2>
               <motion.p 
                 initial={{ opacity: 0, y: 40 }}
@@ -311,7 +376,7 @@ export default function LandingPage() {
                 transition={{ duration: 1, delay: 0.1 }}
                 className="text-2xl opacity-60 font-medium max-w-2xl mx-auto"
               >
-                Satu bulan. Transformasi total. Cepat. Tepat. Percaya diri.
+                Satu Bulan. Transformasi Total. Cepat, tepat, dan percaya diri.
               </motion.p>
             </div>
 
@@ -331,7 +396,7 @@ export default function LandingPage() {
                   </div>
                   <h3 className="text-5xl font-extrabold mb-6 tracking-tight">Private 1:1</h3>
                   <p className="text-xl opacity-80 mb-10 leading-relaxed font-medium">
-                    Atensi eksklusif. Bongkar kelemahan speaking kamu secara spesifik. Waktu seutuhnya milikmu.
+                    Atensi eksklusif untuk membongkar kelemahan speaking secara spesifik dengan waktu yang sepenuhnya milikmu.
                   </p>
                   <ul className="space-y-5 text-lg font-medium opacity-90 mb-12">
                     <li className="flex gap-4 items-center"><CheckCircle2 className="w-6 h-6 text-brand-orange shrink-0" /> 8 Sesi Intensif</li>
@@ -362,7 +427,7 @@ export default function LandingPage() {
                   </div>
                   <h3 className="text-5xl font-extrabold mb-6 tracking-tight">Semi Private</h3>
                   <p className="text-xl opacity-70 mb-10 leading-relaxed font-medium">
-                    Maksimal 7 orang. Lingkungan tanpa dihakimi. Sempurna untuk melatih keberanian di depan umum.
+                    Sempurna untuk melatih keberanian di depan umum bersama maksimal 7 orang dalam lingkungan tanpa penghakiman.
                   </p>
                   <ul className="space-y-5 text-lg font-medium opacity-80 mb-12">
                     <li className="flex gap-4 items-center"><CheckCircle2 className="w-6 h-6 text-brand-astronaut shrink-0" /> 8 Sesi Grup Interaktif</li>
@@ -392,17 +457,17 @@ export default function LandingPage() {
                 transition={{ duration: 1 }}
                 className="text-5xl md:text-6xl font-extrabold tracking-tight mb-6"
               >
-                Mereka membuktikan. Giliranmu.
+                Mereka Membuktikan
               </motion.h2>
-              <p className="text-2xl opacity-70 font-medium">Bukan sekadar cerita. Ini nyata.</p>
+              <p className="text-2xl opacity-70 font-medium">Bukan sekadar cerita, ini hasil nyata</p>
             </div>
             
             <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
-              <TestimonialCard text="Akhirnya berani pimpin meeting full English. Nol teori membosankan. 100% praktik yang masuk akal." author="Budi S." role="Software Engineer" />
-              <TestimonialCard text="Satu minggu pertama, kaku lidah hilang. Tutor asik. Ngomong jadi ngalir tanpa banyak mikir." author="Sinta D." role="Product Manager" />
-              <TestimonialCard text="Lingkungannya super supportif. 90 menit terasa singkat karena kita dipaksa ngomong terus. Recommended." author="Andi R." role="Mahasiswa" />
+              <TestimonialCard text="Akhirnya berani pimpin meeting full English. Nol teori membosankan dan 100% praktik yang masuk akal." author="Budi S." role="Software Engineer" />
+              <TestimonialCard text="Satu minggu pertama kaku lidah hilang. Tutor asik, ngomong jadi ngalir tanpa banyak mikir." author="Sinta D." role="Product Manager" />
+              <TestimonialCard text="Lingkungannya super supportif. Waktu 90 menit terasa singkat karena kita dipaksa ngomong terus." author="Andi R." role="Mahasiswa" />
               <TestimonialCard text="Solusi jitu buat yang otaknya ngerti tapi mulutnya bisu. Metode simulasi yang nggak main-main." author="Maya K." role="Entrepreneur" />
-              <TestimonialCard text="Sesi tanya jawab presentasi jadi rutinitas biasa. Mental block hancur. Berani debat klien luar." author="Kevin W." role="Sales Executive" />
+              <TestimonialCard text="Sesi tanya jawab presentasi jadi rutinitas biasa. Mental block hancur dan berani debat klien luar." author="Kevin W." role="Sales Executive" />
             </div>
           </div>
         </section>
@@ -417,25 +482,25 @@ export default function LandingPage() {
               transition={{ duration: 1 }}
               className="text-4xl md:text-6xl font-extrabold text-center tracking-tight mb-16"
             >
-              Pertanyaanmu. Jawaban kami.
+              Pertanyaan & Jawaban
             </motion.h2>
             
             <div className="space-y-4">
               <FaqItem 
                 question="Apakah kelas berjalan secara online?" 
-                answer="Ya. 100% online. Lewat Zoom. Kamu belajar di mana saja. Interaksi tanpa batas ruang." 
+                answer="Ya, 100% online lewat Zoom. Kamu bisa belajar di mana saja dengan interaksi tanpa batas ruang." 
               />
               <FaqItem 
                 question="Bagaimana cara menentukan jadwal?" 
-                answer="Sepenuhnya kendalimu. Kelas Private menyesuaikan waktu luangmu. Kelas Semi-Private punya jam rutin di malam hari. Fleksibel." 
+                answer="Sepenuhnya dalam kendalimu. Kelas Private menyesuaikan waktu luangmu, sedangkan kelas Semi-Private memiliki jam rutin malam hari yang sangat fleksibel." 
               />
               <FaqItem 
                 question="Cocok untuk pemula yang benar-benar nol?" 
-                answer="Sangat cocok. Kurikulum dibangun bertahap. Lingkungan tanpa penghakiman. Tutor spesialis pemula siap menuntunmu." 
+                answer="Sangat cocok karena kurikulum dibangun bertahap dalam lingkungan tanpa penghakiman. Tutor spesialis pemula siap menuntun langkahmu." 
               />
               <FaqItem 
                 question="Bagaimana langkah mendaftarnya?" 
-                answer="Sesederhana chat WhatsApp. Klik tombol di halaman ini. Diskusi dengan admin. Bayar. Selesai. Kamu siap." 
+                answer="Cukup klik tombol WhatsApp di halaman ini. Konsultasi, pilih jadwal, dan kamu siap belajar." 
               />
             </div>
           </div>
@@ -457,10 +522,10 @@ export default function LandingPage() {
                 </div>
                 
                 <h2 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 tracking-tight">
-                  Tunggu apa lagi.
+                  Tunggu Apa Lagi?
                 </h2>
                 <p className="text-2xl opacity-70 mb-10 max-w-xl mx-auto font-medium leading-relaxed text-brand-astronaut">
-                  Karir menanti. Bicara sekarang. Tanpa ragu.
+                  Karir menanti, bicaralah sekarang tanpa ragu.
                 </p>
                 
                 <div className="flex justify-center">
@@ -475,7 +540,7 @@ export default function LandingPage() {
                 </div>
                 
                 <p className="mt-8 text-sm font-medium opacity-50 uppercase tracking-widest">
-                  Respon instan. Tanpa beban.
+                  Respon instan tanpa beban
                 </p>
               </div>
             </motion.div>
