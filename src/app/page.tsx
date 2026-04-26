@@ -92,10 +92,10 @@ export default function LandingPage() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.5, ease: "easeOut" }}
-            className="text-center"
+            className="text-center flex flex-col items-center"
           >
-            <div className="inline-flex items-center justify-center w-24 h-24 mb-10 bg-brand-orange/10 rounded-full text-brand-orange border border-brand-orange/20">
-              <MapIcon className="w-12 h-12" />
+            <div className="w-28 h-28 mb-10 rounded-[2rem] overflow-hidden border border-brand-astronaut/5 shadow-2xl bg-white p-2">
+              <Image src="/logo.png" alt="English Map Logo" width={112} height={112} className="w-full h-full object-cover rounded-2xl" />
             </div>
             <h1 className="text-5xl md:text-7xl lg:text-[7rem] font-extrabold tracking-tighter leading-[1.1] mb-6">
               Peta Jalan<br />Bahasamu
@@ -267,22 +267,24 @@ export default function LandingPage() {
                   <div className="flex justify-between items-end mb-4">
                     <p className="text-xl font-bold text-white/60">Tempat Les Lain</p>
                   </div>
-                  <div className="flex h-12 w-full rounded-full overflow-hidden bg-white/5">
+                  <div className="flex h-12 w-full rounded-full overflow-hidden bg-white/5 relative border border-white/10">
                     <motion.div 
-                      initial={{ width: 0 }}
+                      initial={{ width: "0%" }}
                       whileInView={{ width: "80%" }}
-                      transition={{ duration: 1.5, ease: "easeOut", delay: 0.5 }}
-                      className="bg-white/20 h-full flex items-center justify-center border-r border-white/10"
+                      viewport={{ once: true, margin: "-50px" }}
+                      transition={{ duration: 2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+                      className="bg-white/20 h-full flex items-center justify-center border-r border-white/10 absolute left-0 top-0"
                     >
-                      <span className="text-xs font-bold text-white/70">80% Teori</span>
+                      <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay:1}} className="text-xs font-bold text-white/70 px-4 whitespace-nowrap">80% Teori</motion.span>
                     </motion.div>
                     <motion.div 
-                      initial={{ width: 0 }}
+                      initial={{ width: "0%" }}
                       whileInView={{ width: "20%" }}
-                      transition={{ duration: 1.5, ease: "easeOut", delay: 0.5 }}
-                      className="bg-brand-orange/30 h-full flex items-center justify-center"
+                      viewport={{ once: true, margin: "-50px" }}
+                      transition={{ duration: 2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+                      className="bg-brand-orange/30 h-full flex items-center justify-center absolute right-0 top-0"
                     >
-                      <span className="text-xs font-bold text-brand-orange">20% Praktik</span>
+                      <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay:1}} className="text-xs font-bold text-brand-orange px-4 whitespace-nowrap">20% Praktik</motion.span>
                     </motion.div>
                   </div>
                 </div>
@@ -292,23 +294,25 @@ export default function LandingPage() {
                   <div className="flex justify-between items-end mb-4">
                     <p className="text-2xl font-extrabold text-white">English Map</p>
                   </div>
-                  <div className="flex h-16 w-full rounded-full overflow-hidden bg-white/5 shadow-lg shadow-brand-orange/10 border border-white/10">
+                  <div className="flex h-16 w-full rounded-full overflow-hidden bg-white/5 shadow-lg shadow-brand-orange/10 border border-white/10 relative">
                     <motion.div 
-                      initial={{ width: 0 }}
+                      initial={{ width: "0%" }}
                       whileInView={{ width: "20%" }}
-                      transition={{ duration: 1.5, ease: "easeOut", delay: 0.5 }}
-                      className="bg-white/10 h-full flex items-center justify-center border-r border-white/10"
+                      viewport={{ once: true, margin: "-50px" }}
+                      transition={{ duration: 2, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
+                      className="bg-white/10 h-full flex items-center justify-center border-r border-white/10 absolute left-0 top-0"
                     >
-                      <span className="text-xs font-bold text-white/50">20% Teori</span>
+                      <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay:1.2}} className="text-xs font-bold text-white/50 px-4 whitespace-nowrap">20% Teori</motion.span>
                     </motion.div>
                     <motion.div 
-                      initial={{ width: 0 }}
+                      initial={{ width: "0%" }}
                       whileInView={{ width: "80%" }}
-                      transition={{ duration: 1.5, ease: "easeOut", delay: 0.5 }}
-                      className="bg-brand-orange h-full flex items-center justify-center relative overflow-hidden"
+                      viewport={{ once: true, margin: "-50px" }}
+                      transition={{ duration: 2, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
+                      className="bg-brand-orange h-full flex items-center justify-center absolute right-0 top-0 overflow-hidden"
                     >
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full animate-[shimmer_2s_infinite]" />
-                      <span className="text-sm font-extrabold text-white">80% Praktik Bicara</span>
+                      <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay:1.2}} className="text-sm font-extrabold text-white px-4 whitespace-nowrap">80% Praktik Bicara</motion.span>
                     </motion.div>
                   </div>
                 </div>
@@ -387,7 +391,7 @@ export default function LandingPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 1 }}
-                className="bg-brand-astronaut text-white rounded-[40px] p-10 md:p-14 relative overflow-hidden shadow-2xl flex flex-col group"
+                className="bg-brand-astronaut text-white rounded-[40px] p-10 md:p-14 relative overflow-hidden shadow-2xl flex flex-col group hover:-translate-y-4 hover:shadow-[0_30px_60px_rgba(0,43,61,0.3)] hover:scale-[1.01] transition-all duration-500 cursor-pointer"
               >
                 <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-brand-orange/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                 <div className="relative z-10 flex-1">
@@ -418,7 +422,7 @@ export default function LandingPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 1, delay: 0.1 }}
-                className="bg-white text-brand-astronaut rounded-[40px] p-10 md:p-14 relative overflow-hidden shadow-2xl border border-brand-astronaut/10 flex flex-col group"
+                className="bg-white text-brand-astronaut rounded-[40px] p-10 md:p-14 relative overflow-hidden shadow-2xl border border-brand-astronaut/10 flex flex-col group hover:-translate-y-4 hover:shadow-[0_30px_60px_rgba(0,0,0,0.1)] hover:scale-[1.01] transition-all duration-500 cursor-pointer"
               >
                 <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-brand-astronaut/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                 <div className="relative z-10 flex-1">
@@ -528,7 +532,7 @@ export default function LandingPage() {
                   Karir menanti, bicaralah sekarang tanpa ragu.
                 </p>
                 
-                <div className="flex justify-center">
+                <div className="flex flex-col items-center justify-center gap-6">
                   <a 
                     href="https://wa.me/62881011617077?text=Halo%20English%20Map,%20mau%20tanya-tanya%20dulu%20dong%20soal%20kelasnya" 
                     target="_blank" 
@@ -537,11 +541,15 @@ export default function LandingPage() {
                   >
                     Bicara Lewat Chat <span className="group-hover:translate-x-2 transition-transform">→</span>
                   </a>
+                  
+                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-orange/10 text-brand-orange rounded-full text-sm font-bold tracking-widest uppercase mt-4">
+                    <span className="relative flex h-3 w-3">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-orange opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-3 w-3 bg-brand-orange"></span>
+                    </span>
+                    Registrasi Kurang Dari 5 Menit
+                  </div>
                 </div>
-                
-                <p className="mt-8 text-sm font-medium opacity-50 uppercase tracking-widest">
-                  Respon instan tanpa beban
-                </p>
               </div>
             </motion.div>
           </div>
