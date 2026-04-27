@@ -37,6 +37,12 @@ export default function LandingPage() {
   const pathHeight = useSpring(useTransform(scrollYProgress, [0, 1], ["0%", "100%"]), { stiffness: 50, damping: 20 });
   const smoothProgress = useSpring(scrollYProgress, { stiffness: 50, damping: 20 });
 
+  const headerTextColor = useTransform(
+    scrollY,
+    [0, 100],
+    ["#F8FAFC", "#003851"]
+  );
+
   return (
     <motion.div 
       ref={containerRef}
@@ -44,7 +50,7 @@ export default function LandingPage() {
       className="flex flex-col min-h-screen font-sans selection:bg-brand-orange/30 selection:text-brand-astronaut overflow-x-hidden transition-colors duration-[1.5s] ease-in-out relative"
     >
       {/* Fixed Fluency Core Canvas */}
-      <div className="fixed inset-0 z-0 pointer-events-none flex items-center justify-center overflow-hidden mix-blend-multiply opacity-80">
+      <div className="fixed inset-0 z-0 pointer-events-none flex items-center justify-center overflow-hidden opacity-30">
         <FluencyCoreCanvas progress={smoothProgress} />
       </div>
 
@@ -59,8 +65,8 @@ export default function LandingPage() {
       </div>
 
       <motion.header 
-        style={{ backgroundColor: navBg }}
-        className="fixed top-0 w-full z-50 backdrop-blur-2xl border-b border-black/5 transition-all duration-300 text-brand-astronaut"
+        style={{ backgroundColor: navBg, color: headerTextColor }}
+        className="fixed top-0 w-full z-50 backdrop-blur-2xl border-b border-black/5 transition-all duration-300"
       >
         <nav className="max-w-7xl mx-auto px-6 md:pl-24 h-24 flex items-center justify-between">
           <motion.div style={{ scale: logoScale }} className="flex flex-col origin-left">
@@ -440,7 +446,7 @@ export default function LandingPage() {
         </section>
 
         {/* Testimonials */}
-        <section className="py-32 px-6 md:pl-24 border-t border-current/5 text-brand-astronaut relative z-10">
+        <section className="py-32 px-6 md:pl-24 border-t border-current/5 text-current relative z-10">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-20">
               <motion.h2 
