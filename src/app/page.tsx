@@ -5,6 +5,7 @@ import Image from "next/image";
 import Script from "next/script";
 import { motion, useScroll, useTransform, useSpring, AnimatePresence } from "framer-motion";
 import { CheckCircle2, Star, Download, ChevronDown, Map as MapIcon, ArrowDown, MoveRight } from "lucide-react";
+import FluencyCoreCanvas from "@/components/FluencyCoreCanvas";
 
 export default function LandingPage() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -17,13 +18,13 @@ export default function LandingPage() {
   const backgroundColor = useTransform(
     scrollYProgress,
     [0, 0.15, 0.25, 0.45, 0.55, 1],
-    ["#F8FAFC", "#F8FAFC", "#002b3d", "#002b3d", "#F8FAFC", "#F8FAFC"]
+    ["#002b3d", "#002b3d", "#F8FAFC", "#F8FAFC", "#002b3d", "#002b3d"]
   );
 
   const textColor = useTransform(
     scrollYProgress,
     [0, 0.15, 0.25, 0.45, 0.55, 1],
-    ["#003851", "#003851", "#F8FAFC", "#F8FAFC", "#003851", "#003851"]
+    ["#F8FAFC", "#F8FAFC", "#003851", "#003851", "#F8FAFC", "#F8FAFC"]
   );
 
   const navBg = useTransform(
@@ -34,6 +35,7 @@ export default function LandingPage() {
 
   const logoScale = useSpring(useTransform(scrollY, [0, 300], [1, 0.85]), { stiffness: 100, damping: 20 });
   const pathHeight = useSpring(useTransform(scrollYProgress, [0, 1], ["0%", "100%"]), { stiffness: 50, damping: 20 });
+  const smoothProgress = useSpring(scrollYProgress, { stiffness: 50, damping: 20 });
 
   return (
     <motion.div 
@@ -41,6 +43,11 @@ export default function LandingPage() {
       style={{ backgroundColor, color: textColor }}
       className="flex flex-col min-h-screen font-sans selection:bg-brand-orange/30 selection:text-brand-astronaut overflow-x-hidden transition-colors duration-[1.5s] ease-in-out relative"
     >
+      {/* Fixed Fluency Core Canvas */}
+      <div className="fixed inset-0 z-0 pointer-events-none flex items-center justify-center overflow-hidden mix-blend-multiply opacity-80">
+        <FluencyCoreCanvas progress={smoothProgress} />
+      </div>
+
       {/* Dynamic Roadmap Line - Scroll Progress Indicator */}
       <div className="fixed left-6 md:left-12 top-0 bottom-0 w-[2px] bg-current/10 z-0 pointer-events-none hidden md:block">
         <motion.div 
@@ -87,33 +94,41 @@ export default function LandingPage() {
 
       <main className="relative z-10 w-full">
         
-        {/* Intro / Grand Opening Section */}
+        {/* Giant Logo Section */}
         <section className="w-full h-screen flex flex-col items-center justify-center px-6 relative snap-start">
           <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, scale: 0.8, filter: "blur(10px)" }}
+            animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
             transition={{ duration: 1.5, ease: "easeOut" }}
-            className="text-center flex flex-col items-center"
+            className="w-48 h-48 md:w-72 md:h-72 rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl bg-white p-4"
           >
-            <div className="w-28 h-28 mb-10 rounded-[2rem] overflow-hidden border border-brand-astronaut/5 shadow-2xl bg-white p-2">
-              <Image src="/logo.png" alt="English Map Logo" width={112} height={112} className="w-full h-full object-cover rounded-2xl" />
-            </div>
-            <h1 className="text-5xl md:text-7xl lg:text-[7rem] font-extrabold tracking-tighter leading-[1.1] mb-6">
-              Peta Jalan<br />Bahasamu
-            </h1>
-            <p className="text-xl md:text-2xl font-medium opacity-60">
-              Berhenti menghafal, mulai berbicara tanpa batas.
-            </p>
+            <Image src="/logo.png" alt="English Map Logo" width={288} height={288} className="w-full h-full object-cover rounded-3xl" />
           </motion.div>
-          
           <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5, duration: 1 }}
             className="absolute bottom-20 flex flex-col items-center gap-3 text-brand-orange font-bold animate-bounce"
           >
-            <span className="text-sm tracking-widest uppercase">Mulai Perjalanan</span>
-            <ArrowDown className="w-6 h-6" />
+            <ArrowDown className="w-8 h-8" />
+          </motion.div>
+        </section>
+
+        {/* Intro / Grand Opening Section */}
+        <section className="w-full h-screen flex flex-col items-center justify-center px-6 relative snap-start">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
+            className="text-center flex flex-col items-center"
+          >
+            <h1 className="text-5xl md:text-7xl lg:text-[7rem] font-extrabold tracking-tighter leading-[1.1] mb-6">
+              Peta Jalan<br />Bahasamu
+            </h1>
+            <p className="text-xl md:text-2xl font-medium opacity-60 mt-6">
+              Berhenti menghafal, mulai berbicara tanpa batas.
+            </p>
           </motion.div>
         </section>
 
@@ -425,7 +440,7 @@ export default function LandingPage() {
         </section>
 
         {/* Testimonials */}
-        <section className="py-32 px-6 md:pl-24 bg-brand-blue-white border-t border-current/5 text-brand-astronaut">
+        <section className="py-32 px-6 md:pl-24 border-t border-current/5 text-brand-astronaut relative z-10">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-20">
               <motion.h2 
