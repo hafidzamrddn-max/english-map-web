@@ -9,7 +9,7 @@ interface FluencyCoreCanvasProps {
 
 export default function FluencyCoreCanvas({ progress }: FluencyCoreCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [loadingPercentage, setLoadingPercentage] = useState(0);
+  const [, setLoadingPercentage] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
   const [useProceduralFallback, setUseProceduralFallback] = useState(false);
 
@@ -17,12 +17,26 @@ export default function FluencyCoreCanvas({ progress }: FluencyCoreCanvasProps) 
   const totalFrames = 100; // Expected number of frames
 
   // Procedural fallback state
-  const particlesRef = useRef<any[]>([]);
+  const particlesRef = useRef<{ baseX: number; baseY: number; baseZ: number; color: string; size: number }[]>([]);
   const currentProgress = useRef(0);
 
   useMotionValueEvent(progress, "change", (latest) => {
     currentProgress.current = latest;
   });
+
+  function initProceduralParticles() {
+    const particles = [];
+    for (let i = 0; i < 500; i++) {
+      particles.push({
+        baseX: (Math.random() - 0.5) * 200,
+        baseY: (Math.random() - 0.5) * 200,
+        baseZ: (Math.random() - 0.5) * 200,
+        color: Math.random() > 0.5 ? "#FF6B6B" : "#003851",
+        size: Math.random() * 3 + 1
+      });
+    }
+    particlesRef.current = particles;
+  }
 
   useEffect(() => {
     // Attempt to preload image sequence
@@ -65,20 +79,6 @@ export default function FluencyCoreCanvas({ progress }: FluencyCoreCanvasProps) 
       setIsLoaded(true);
     }
   }, []);
-
-  function initProceduralParticles() {
-    const particles = [];
-    for (let i = 0; i < 500; i++) {
-      particles.push({
-        baseX: (Math.random() - 0.5) * 200,
-        baseY: (Math.random() - 0.5) * 200,
-        baseZ: (Math.random() - 0.5) * 200,
-        color: Math.random() > 0.5 ? "#FF6B6B" : "#003851",
-        size: Math.random() * 3 + 1
-      });
-    }
-    particlesRef.current = particles;
-  }
 
   useEffect(() => {
     if (!isLoaded) return;
@@ -146,15 +146,15 @@ export default function FluencyCoreCanvas({ progress }: FluencyCoreCanvasProps) 
           const sinR = Math.sin(rotation);
           
           // Explode outwards based on multiplier
-          let x = particle.baseX * explosionMultiplier;
-          let y = particle.baseY * explosionMultiplier;
-          let z = particle.baseZ * explosionMultiplier;
+          const x = particle.baseX * explosionMultiplier;
+          const y = particle.baseY * explosionMultiplier;
+          const z = particle.baseZ * explosionMultiplier;
           
           // Apply rotation
-          let rx = x * cosR - z * sinR;
-          let rz = x * sinR + z * cosR;
+          const rx = x * cosR - z * sinR;
+          const rz = x * sinR + z * cosR;
           
-          let ry = y * cosR - rz * sinR;
+          const ry = y * cosR - rz * sinR;
           
           // Perspective projection
           const perspective = 400 / (400 + rz);

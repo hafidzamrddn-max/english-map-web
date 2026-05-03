@@ -7,7 +7,7 @@ export default function DashboardPage() {
       <section className="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
           <h1 className="text-3xl font-bold font-heading text-slate-900 dark:text-white">Welcome back, John! 👋</h1>
-          <p className="text-slate-500 dark:text-slate-400 mt-1">You're making great progress. Ready to continue your journey?</p>
+          <p className="text-slate-500 dark:text-slate-400 mt-1">You&apos;re making great progress. Ready to continue your journey?</p>
         </div>
         <div className="flex gap-4">
           <div className="glass px-6 py-3 rounded-2xl shadow-sm">
