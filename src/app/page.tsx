@@ -4,7 +4,7 @@ import React, { useRef, useState } from "react";
 import Image from "next/image";
 import Script from "next/script";
 import { motion, useScroll, useTransform, useSpring, AnimatePresence } from "framer-motion";
-import { CheckCircle2, Star, Download, ChevronDown, Map as MapIcon, ArrowDown, MoveRight } from "lucide-react";
+import { CheckCircle2, Star, Download, ChevronDown, MoveRight } from "lucide-react";
 import FluencyCoreCanvas from "@/components/FluencyCoreCanvas";
 
 export default function LandingPage() {
@@ -99,26 +99,6 @@ export default function LandingPage() {
       </motion.header>
 
       <main className="relative z-10 w-full">
-        
-        {/* Giant Logo Section */}
-        <section className="w-full h-screen flex flex-col items-center justify-center px-6 relative snap-start">
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.8, filter: "blur(10px)" }}
-            animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-            transition={{ duration: 1.5, ease: "easeOut" }}
-            className="w-48 h-48 md:w-72 md:h-72 rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl bg-white p-4"
-          >
-            <Image src="/logo.png" alt="English Map Logo" width={288} height={288} className="w-full h-full object-cover rounded-3xl" />
-          </motion.div>
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.5, duration: 1 }}
-            className="absolute bottom-20 flex flex-col items-center gap-3 text-brand-orange font-bold animate-bounce"
-          >
-            <ArrowDown className="w-8 h-8" />
-          </motion.div>
-        </section>
 
         {/* Intro / Grand Opening Section */}
         <section className="w-full h-screen flex flex-col items-center justify-center px-6 relative snap-start">
