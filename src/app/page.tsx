@@ -212,102 +212,51 @@ export default function LandingPage() {
               </motion.p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {/* English for Undergraduate */}
+            <div className="flex justify-center">
+              {/* Speaking Class */}
               <motion.div 
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1 }}
-                className="bg-brand-astronaut text-white rounded-[40px] p-10 relative overflow-hidden shadow-2xl flex flex-col group"
+                className="bg-brand-astronaut text-white rounded-[40px] p-10 relative overflow-hidden shadow-2xl flex flex-col group w-full max-w-2xl"
               >
                 <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-brand-orange/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                 <div className="relative z-10 flex-1 flex flex-col">
                   <div className="inline-block px-5 py-2 bg-brand-orange text-white rounded-full text-xs font-bold tracking-widest uppercase mb-8 self-start">
-                    Kelas Pilihan
+                    Cocok untuk pemula
                   </div>
-                  <h3 className="text-4xl font-extrabold mb-4 tracking-tight">#1 English for Undergraduate</h3>
+                  <h3 className="text-4xl font-extrabold mb-4 tracking-tight">Speaking Class</h3>
                   <p className="text-lg opacity-80 mb-6 font-medium">
-                    Tingkatkan daya saing dan kepercayaan dirimu untuk mengejar peluang internasional—seperti exchange, conference, maupun karier profesional—melalui penguasaan soft skills.
+                    Bangun fondasi bahasa Inggris Anda dan tingkatkan keberanian berbicara di lingkungan yang interaktif dan suportif.
                   </p>
-                  <div className="inline-block px-4 py-2 bg-brand-orange/10 text-brand-orange border border-brand-orange/20 rounded-lg font-bold text-sm tracking-wide mb-6">Pengalaman premium, 30% lebih terjangkau dari layanan serupa.</div>
                   
                   <div className="bg-white/5 rounded-2xl p-6 mb-8 border border-white/10 flex-1">
                     <div className="space-y-6 text-base font-medium opacity-90">
                       <div>
                         <strong className="text-brand-orange block mb-2 text-lg">Harga & Akses:</strong> 
                         <div className="flex flex-col gap-2">
-                           <a href="https://wa.me/62881011617077?text=Hi%2C%20I%20want%20to%20book%20the%208%20Sessions%20Bundle%20for%20Undergraduate." target="_blank" rel="noopener noreferrer" className="hover:text-brand-orange underline underline-offset-4 decoration-white/30 transition-colors">Paket 8 Sesi: Rp 299.000</a>
-                           <a href="https://wa.me/62881011617077?text=Hi%2C%20I%20want%20to%20book%20a%20Single%20Session%20for%20Undergraduate." target="_blank" rel="noopener noreferrer" className="hover:text-brand-orange underline underline-offset-4 decoration-white/30 transition-colors">Sesi Satuan: Rp 49.000</a>
-                           <a href="https://wa.me/62881011617077?text=Hi%2C%20I%20want%20to%20consult%20about%20the%20Module%20Only." target="_blank" rel="noopener noreferrer" className="hover:text-brand-orange underline underline-offset-4 decoration-white/30 transition-colors">Hanya Modul: Konsultasi via WhatsApp</a>
+                           <a href="https://wa.me/62881011617077?text=Hi%2C%20I%20want%20to%20book%20the%20Speaking%20Class." target="_blank" rel="noopener noreferrer" className="hover:text-brand-orange underline underline-offset-4 decoration-white/30 transition-colors">Paket Penuh 8 Sesi: Rp 299.000</a>
                         </div>
                       </div>
 
                       <div>
                         <strong className="text-brand-orange block mb-2 text-lg">Format:</strong> 
-                        <p>100% Online | 60-90 menit/sesi</p>
+                        <p>8 Sessions | 90 Minutes/Session | Maksimal 10 murid dalam 1 kelas</p>
                       </div>
 
                       <div>
-                        <strong className="text-brand-orange block mb-3 text-lg">Silabus:</strong> 
+                        <strong className="text-brand-orange block mb-3 text-lg">Benefit:</strong> 
                         <ul className="space-y-2 list-disc list-outside ml-4 opacity-90 text-sm md:text-base leading-relaxed">
-                          <li><strong className="text-brand-orange">Terminology Mastery:</strong> Application in higher education.</li>
-                          <li><strong className="text-brand-orange">Verbal Communication:</strong> Discourse with peers & faculty.</li>
-                          <li><strong className="text-brand-orange">Non-Verbal:</strong> Digital ethics & correspondence.</li>
-                          <li><strong className="text-brand-orange">Conflict Resolution:</strong> Diplomatic frameworks.</li>
-                          <li><strong className="text-brand-orange">Group Discussion:</strong> Evidence-based argumentation.</li>
-                          <li><strong className="text-brand-orange">Networking:</strong> Strategic rapport-building.</li>
-                          <li><strong className="text-brand-orange">Academic Integration:</strong> Synthesis of identity.</li>
-                          <li><strong className="text-brand-orange">Expert Class:</strong> Comprehensive case studies.</li>
+                          <li>Modul Belajar</li>
+                          <li>Speaking Prompt untuk latihan di luar kelas</li>
+                          <li>Grammar Worksheet</li>
+                          <li>Laporan Evaluasi Belajar</li>
                         </ul>
                       </div>
                     </div>
                   </div>
-                  <a href="https://wa.me/62881011617077?text=Hi%2C%20I%20want%20to%20ask%20about%20the%20English%20for%20Undergraduate%20Class." target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-brand-orange text-white py-4 rounded-full font-bold text-lg hover:bg-[#e09150] transition-colors shadow-lg">
-                    Amankan Slot Anda
-                  </a>
-                </div>
-              </motion.div>
-
-              {/* Private Speaking Class */}
-              <motion.div 
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1, delay: 0.2 }}
-                className="bg-white text-brand-astronaut border border-brand-astronaut/10 rounded-[40px] p-10 relative overflow-hidden shadow-xl flex flex-col group"
-              >
-                <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-brand-astronaut/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                <div className="relative z-10 flex-1 flex flex-col">
-                  <div className="inline-block px-5 py-2 bg-brand-astronaut/5 text-brand-astronaut border border-brand-astronaut/10 rounded-full text-xs font-bold tracking-widest uppercase mb-8 self-start">
-                    Eksklusif
-                  </div>
-                  <h3 className="text-4xl font-extrabold mb-4 tracking-tight">Private Speaking Class</h3>
-                  <p className="text-lg opacity-70 mb-6 font-medium">
-                    Pelatihan privat 1-on-1 bersama <a href="https://www.instagram.com/raihanaeka/" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline font-bold">@raihanaeka</a> untuk menghancurkan mental block Anda dan meningkatkan kefasihan. Jadwal dapat disesuaikan dengan kebutuhan Anda.
-                  </p>
-                  
-                  <div className="bg-black/5 rounded-2xl p-6 mb-8 border border-black/5 flex-1">
-                    <div className="space-y-6 text-base font-medium opacity-80">
-                      <div>
-                        <strong className="text-brand-astronaut block mb-2 text-lg">Harga & Akses:</strong> 
-                        <div className="flex flex-col gap-2">
-                          <a href="https://wa.me/62881011617077?text=Hi%2C%20I%20want%20to%20book%20a%20Private%20Class%20with%20%40raihanaeka.%20Book%20and%20schedule%20now." target="_blank" rel="noopener noreferrer" className="hover:text-brand-orange underline underline-offset-4 decoration-black/30 transition-colors">Paket Penuh 8 Sesi: Rp 799.000</a>
-                        </div>
-                      </div>
-                      
-                      <div>
-                        <strong className="text-brand-astronaut block mb-2 text-lg">Format:</strong> 
-                        <p>8 Sessions | 60 menit/sesi</p>
-                      </div>
-                      
-                      <div>
-                        <strong className="text-brand-astronaut block mb-2 text-lg">Custom Silabus:</strong> 
-                        <p className="leading-relaxed">100% dapat disesuaikan dengan tujuan Anda. Fokus murni pada praktik berbicara intensif, personalized feedback, dan membangun kepercayaan diri tanpa takut dihakimi.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <a href="https://wa.me/62881011617077?text=Hi%2C%20I%20want%20to%20book%20a%20Private%20Class%20with%20%40raihanaeka.%20Book%20and%20schedule%20now." target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-brand-astronaut text-white py-4 rounded-full font-bold text-lg hover:bg-[#002230] transition-colors shadow-lg">
+                  <a href="https://wa.me/62881011617077?text=Hi%2C%20I%20want%20to%20book%20the%20Speaking%20Class." target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-brand-orange text-white py-4 rounded-full font-bold text-lg hover:bg-[#e09150] transition-colors shadow-lg">
                     Pesan & Jadwalkan Sekarang
                   </a>
                 </div>
@@ -393,15 +342,15 @@ export default function LandingPage() {
               />
               <FaqItem 
                 question="Bagaimana format kelasnya?" 
-                answer="100% online dengan jadwal fleksibel setelah jam kerja. Setiap sesi berdurasi 60-90 menit, sangat interaktif, dan dirancang untuk penguasaan skill secara praktis yang langsung bisa digunakan." 
+                answer="Kelas diadakan 8 kali dengan durasi 90 menit per sesi. Agar setiap peserta mendapat porsi praktik yang maksimal, kami membatasi jumlah kelas maksimal 10 murid. Sangat interaktif dan berfokus pada penguasaan skill secara praktis." 
               />
               <FaqItem 
                 question="Untuk siapa program ini dirancang?" 
-                answer="Untuk mereka yang mencari kompetensi nyata, bukan sekadar sertifikat. Kelas kami dirancang khusus bagi mahasiswa dan profesional yang ingin menguasai komunikasi bahasa Inggris dengan percaya diri." 
+                answer="Untuk Anda yang mencari kompetensi nyata, bukan sekadar sertifikat. Kelas kami sangat cocok untuk pemula yang ingin membangun fondasi bahasa Inggris dan berani praktik berbicara dengan percaya diri." 
               />
               <FaqItem 
                 question="Bagaimana sistem harga dan aksesnya?" 
-                answer="Kami menggunakan sistem yang fleksibel. Anda dapat membeli sesi satuan, paket lengkap 8 sesi, atau akses modul saja. Dapatkan pengalaman belajar world-class dengan harga yang 30% lebih terjangkau." 
+                answer="Kami menawarkan paket penuh 8 sesi dengan investasi sebesar Rp299.000. Anda akan mendapatkan pengalaman belajar world-class yang sudah termasuk modul, worksheet, dan laporan evaluasi belajar." 
               />
             </div>
           </div>
